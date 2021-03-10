@@ -87,7 +87,7 @@ body: JSON.stringify(this.state)
        <div className="searchForm">
         <form onSubmit={this.handleSubmit} className="search-button">
           <label>
-            Please Put In BookTitle:
+             BookTitle:
 
               <input type="search" onInput={this.handleInput} required placeholder="Book name ..." />
               <input type="submit" value="Search Book" className="search-button"/>
