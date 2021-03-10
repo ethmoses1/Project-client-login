@@ -35,7 +35,7 @@ class Reviews extends React.Component {
     console.log(result)
     this.setState({url: result})
 
-    const baseUrl = `http://localhost:8080/books/${result}`
+    const baseUrl = `https://zeibrary.herokuapp.com/books/${result}`
     axios.get(baseUrl).then((response) => {
       const info = (response.data)
       console.log(info)

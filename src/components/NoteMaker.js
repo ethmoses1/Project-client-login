@@ -21,7 +21,7 @@ class NoteMaker extends React.Component {
 
       console.log("button clicked")
         // this.setState({booktitle: event.target.value});
-        fetch('http://localhost:3000/notes/' , {
+        fetch('https://zeibrary.herokuapp.com/notes/' , {
     method: "POST",
     headers: {
       'Content-type': 'application/json'
