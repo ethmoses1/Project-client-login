@@ -3,10 +3,10 @@ import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route, Link, useLocation } from "react-router-dom";
 import ReviewForm from './ReviewForm'
 // import Notes from './Notes'
-// import './Areview.css'
+import './Areview.css'
 
 
-class Notes extends React.Component {
+class Areview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {title: '', reviewsInfo: [''], reviews: [] , button: false ,formRenderer: false, noteMakerRenderer: false};
@@ -95,11 +95,11 @@ makeNotes(){
 
   return (
   <div className="Notes-Container">
+  
   <h4>{this.props.dataFromParent}</h4>
 
   <div className="button-button-display">
-
-  <button onClick={this.handleBackEnd} className="button2">Notes</button>
+  <button onClick={this.handleBackEnd} className="button1">Reviews</button>
   </div>
 
 <div className="create-review-notes">
@@ -114,11 +114,13 @@ makeNotes(){
   )}
   </div>
 
-  // {this.state.formRenderer ? <ReviewForm data = {this.state.title}/> :null}
-  // {this.state.noteMakerRenderer ? <ReviewForm data = {this.state.title}/> :null}
   </div>
   </div>
   )
  }
 }
-export default Notes;
+export default Areview;
+// /<button onClick={this.getNotesBackEnd} className="button2">Notes</button>
+
+// {this.state.formRenderer ? <ReviewForm data = {this.state.title}/> :null}
+// {this.state.noteMakerRenderer ? <ReviewForm data = {this.state.title}/> :null}

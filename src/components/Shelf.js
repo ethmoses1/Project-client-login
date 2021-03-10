@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './Shelf.css'
 import { BrowserRouter as Router, Switch, Route, Link, useLocation } from "react-router-dom";
-import Reviews from './Reviews.js'
+import ReviewsNotesPage from './ReviewsNotesPage.js'
 
 class Shelf extends React.Component {
   constructor(props) {
@@ -14,9 +14,9 @@ class Shelf extends React.Component {
 
 
   handleBackEnd() {
-    console.log("button clicked")
+    console.log("getting stuff from API")
       // this.setState({booktitle: event.target.value});
-      const baseUrl = "https://zeibrary.herokuapp.com/books/"
+      const baseUrl = "http://localhost:8080/books/"
       axios(baseUrl).then((response) => {
          const info = (response.data)
          console.log(info)
@@ -67,7 +67,7 @@ const bookId = e.target.getAttribute('value')
   const baseUrl = ``
   window.confirm(
       "Are you sure you wish to delete this book from your Shelf?"
-    ) && axios.delete(`https://zeibrary.herokuapp.com/books/${bookId}`)
+    ) && axios.delete(`http://localhost:8080/books/${bookId}`)
         .then(res => {
           console.log(res);
           console.log(res.data);
@@ -126,7 +126,7 @@ let string = '0123456789ABCDEF'
       </ul>
     </div>
     <Switch>
-         <Route path="/reviews/id" children={<Reviews />} />
+         <Route path="/reviews/id" children={<ReviewsNotesPage />} />
        </Switch>
   </div>
   )
