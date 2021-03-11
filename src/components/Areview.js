@@ -26,7 +26,7 @@ console.log(this.state.reviews)
       axios(baseUrl).then((response) => {
          const info = (response.data)
          console.log(info)
-          this.setState({reviews: []})
+         this.setState({reviews: []})
            info.map((book) => {
              console.log(book.title)
              console.log(this.props.dataFromParent)
@@ -83,6 +83,7 @@ settinPage(){
 componentWillMount(){
   this.handleBackEnd()
 }
+
 componentDidMount(){
 // this.setState({title: this.props.dataFromParent } )
 this.settinPage()
@@ -114,16 +115,17 @@ makeNotes(){
 
 <div className="create-review-notes">
 
+<div className="display-reviews">
+{this.state.reviews.map((review) =>
+ <p key={review}><small> {review} </small></p>
 
-  <div className="display-reviews">
-  {this.state.reviews.map((review) =>
-    <p key={review}><small> {review} </small></p>
-  )}
-  </div>
-  {this.state.button ?
-    <button onClick={this.makeReview}>Create Review</button>
-  :null}
-  {this.state.formRenderer ? <ReviewForm data = {this.state.title}/> :null}
+)}
+ </div>
+ {this.state.button ?
+   <button onClick={this.makeReview}>Create Review</button>
+ :null}
+
+ {this.state.formRenderer ? <ReviewForm data = {this.state.title}/> :null}
 
   </div>
   </div>

@@ -1,17 +1,19 @@
 .container{
   margin: auto;
   max-width: 85%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
+  /* background-color: white; */
 }
 .searchForm{
-  border: 1px solid red;
+  border: 3px solid white;
   max-width: 40%;
   margin: auto;
   justify-content: center;
+  background-color: white;
 }
 .shelfDiv{
   /* border: 1px solid red; */

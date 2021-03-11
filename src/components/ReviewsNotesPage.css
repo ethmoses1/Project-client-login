@@ -2,13 +2,15 @@
   margin: auto;
   max-width: 100%;
   display: flex;
-  justify-content: space-between;
-  border: 1px solid red;
+   justify-content: space-between;
+  /* border: 1px solid red; */
 }
 .bookPage{
-    border: 1px solid red;
+    border: 3px solid white;
+    background-color: white;
     min-width: 45%;
-    max-width: 45%;
+   max-width: 45%;
+
 }
 .the-two-buttons{
     border: 1px solid red;

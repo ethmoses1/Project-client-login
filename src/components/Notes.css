@@ -1,5 +1,5 @@
 .button-button-display{
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   display: flex;
   justify-content: center;
 }
@@ -10,10 +10,9 @@ button.button2{
   width: 250px;
 }
 .create-review-notes{
-    border: 1px solid green;
+    /* border: 1px solid green; */
     height: 37em;
-    background: gray;
-    padding: 10px;
+    /* background: gray; */
+    padding: 0px;
     background: #EAF0F6;
-
 }

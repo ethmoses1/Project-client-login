@@ -144,7 +144,7 @@ let string = '0123456789ABCDEF'
 
     <div className="bookShelf">
        <ul className="">
-        {listBooks}
+      {listBooks}
       </ul>
     </div>
     <Switch>
