@@ -60,6 +60,7 @@ class ReviewsNotesPage extends React.Component {
 
 Areview(){
 this.setState({Areview: true})
+this.setState({Anote: false})
 }
 Anote(){
   this.setState({Areview: false})
