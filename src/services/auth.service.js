@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://zeibrary.herokuapp.com/api/auth/";
+const API_URL = "https://zeibrary.herokuapp.com/api/auth/";
 
 class AuthService {
   login(username, password) {
