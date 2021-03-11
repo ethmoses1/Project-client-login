@@ -23,7 +23,7 @@ console.log(this.state.reviews)
     console.log("button clicked reviews")
     const url = '6041f5e00914901cdc48b5c7'
       // this.setState({booktitle: event.target.value});
-      const baseUrl = `http://localhost:8080/notes/`
+      const baseUrl = `https://zeibrary.herokuapp.com/notes/`
       axios(baseUrl).then((response) => {
          const info = (response.data)
          console.log(info)
@@ -49,7 +49,7 @@ console.log(this.state.reviews)
     console.log("button clicked reviews")
     const url = '6041f5e00914901cdc48b5c7'
       // this.setState({booktitle: event.target.value});
-      const baseUrl = `http://localhost:8080/notes/`
+      const baseUrl = `https://zeibrary.herokuapp.com/notes/`
       axios(baseUrl).then((response) => {
          const info = (response.data)
          console.log(info)
@@ -104,6 +104,7 @@ makeNotes(){
    </div>
 
  <div className="create-review-notes">
+
 
  <div>
  {this.state.notes.map((note) =>

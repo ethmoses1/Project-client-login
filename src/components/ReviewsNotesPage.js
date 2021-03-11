@@ -9,12 +9,12 @@ import './ReviewsNotesPage.css'
 class ReviewsNotesPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {sidecoverLeft:false, sidecoverRight: true, Areview: false, Anote: false, currentURL: '', url: '', title: '', authors: [], cover: '', description: ''};
-    this.updateState = this.updateState.bind(this)
-    this.Areview = this.Areview.bind(this)
-    this.Anote = this.Anote.bind(this)
-      console.log("current url is: " + this.state.currentURL)
-  }
+     this.state = {sidecoverLeft:false, sidecoverRight: true, Areview: false, Anote: false, currentURL: '', url: '', title: '', authors: [], cover: '', description: ''};
+     this.updateState = this.updateState.bind(this)
+     this.Areview = this.Areview.bind(this)
+     this.Anote = this.Anote.bind(this)
+       console.log("current url is: " + this.state.currentURL)
+   }
 
   updateState(childData){
     console.log("button clicked")
@@ -38,7 +38,7 @@ class ReviewsNotesPage extends React.Component {
     console.log(result)
     this.setState({url: result})
 
-    const baseUrl = `http://localhost:8080/books/${result}`
+    const baseUrl = `https://zeibrary.herokuapp.com/books/${result}`
     axios.get(baseUrl).then((response) => {
       const info = (response.data)
       console.log(info)
@@ -58,18 +58,18 @@ class ReviewsNotesPage extends React.Component {
 
   }
 
-Areview(){
-this.setState({Areview: true})
-this.setState({sidecoverRight: false})
-this.setState({sidecoverLeft: true})
-this.setState({Anote: false})
-}
-Anote(){
-  this.setState({Areview: false})
-  this.setState({sidecoverLeft: true})
+  Areview(){
+  this.setState({Areview: true})
   this.setState({sidecoverRight: false})
- this.setState({Anote: true})
-}
+this.setState({sidecoverLeft: true})
+  this.setState({Anote: false})
+  }
+  Anote(){
+    this.setState({Areview: false})
+ this.setState({sidecoverLeft: true})
+ this.setState({sidecoverRight: false})
+this.setState({Anote: true})
+  }
 
  render() {
 console.log('this is working', this.props.params)
@@ -98,13 +98,13 @@ console.log('this is working', this.props.params)
     <p><small> {this.state.description}</small></p>
     {this.state.sidecoverLeft ? <img src={ this.state.cover } />: null}
    </div>
-    <div className="the-two-buttons">
-    <div className="the-two-buttons-alone">
-   <button onClick={this.Areview}>Review</button>
-   <button onClick={this.Anote}>Note</button>
-    </div>
-    {this.state.Areview ? <Areview dataFromParent = {this.state.title}/> : null}
-    {this.state.Anote ? <Notes dataFromParent = {this.state.title}/> : null}
+  <div className="the-two-buttons">
+   <div className="the-two-buttons-alone">
+  <button onClick={this.Areview}>Review</button>
+  <button onClick={this.Anote}>Note</button>
+  </div>
+   {this.state.Areview ? <Areview dataFromParent = {this.state.title}/> : null}
+   {this.state.Anote ? <Notes dataFromParent = {this.state.title}/> : null}
 
    <div className="image-inside-buttons">
     {

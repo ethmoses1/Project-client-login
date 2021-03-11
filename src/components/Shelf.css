@@ -81,7 +81,7 @@ ul{
   /* box-sizing: border-box; */
   display: flex;
   justify-content: space-around;
-  background-image: url();
+ background-image: url();
   flex-wrap: wrap;
   /* border-bottom: 3px solid red; */
   /* text-orientation: sideways; */
@@ -118,6 +118,7 @@ h1{
 a{
   color: white;
 }
+
 li.Book{
   background-color: green;
 }

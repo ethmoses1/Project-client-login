@@ -55,7 +55,7 @@ import AuthService from "../services/auth.service";
     this.setState({description: ''})
   console.log("button clicked")
     // this.setState({booktitle: event.target.value});
-    fetch('http://localhost:8080/books/' , {
+    fetch('https://zeibrary.herokuapp.com/books/' , {
 method: "POST",
 headers: {
   'Content-type': 'application/json'
