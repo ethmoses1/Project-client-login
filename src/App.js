@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Reviews from './components/Reviews'
+import ReviewsNotesPage from './components/ReviewsNotesPage'
 
 import AuthService from "./services/auth.service";
 
@@ -53,11 +53,7 @@ class App extends Component {
           </Link>
           <div className="navbar-nav mr-auto">
 
-          <li className="nav-item">
-            <Link to={"/home"} className="nav-link">
-              Home
-            </Link>
-          </li>
+
             {showModeratorBoard && (
               <li className="nav-item">
                 <Link to={"/mod"} className="nav-link">
@@ -86,7 +82,7 @@ class App extends Component {
           {currentUser ? (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link to={"/user"} className="nav-link">
+                <Link to={"/profile"} className="nav-link">
                   {currentUser.username}
                 </Link>
               </li>
@@ -122,8 +118,8 @@ class App extends Component {
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
-            <Route path="/reviews" component={Reviews}/>
-            <Route path="/reviews/:id" component={Reviews}/>
+            <Route path="/reviews" component={ReviewsNotesPage}/>
+            <Route path="/reviews/:id" component={ReviewsNotesPage}/>
           </Switch>
         </div>
       </div>

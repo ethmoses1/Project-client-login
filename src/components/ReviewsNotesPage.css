@@ -9,7 +9,8 @@
     border: 1px solid red;
     max-width: 45%
 }
-.notesPage{
+.notes-review-Page-buttons{
+  display: flex;
     border: 1px solid red;
     max-width: 50%
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 
-class NoteMaker extends React.Component {
+class NoteForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {title: this.props.data, review: '', reloadReviews: false};
+    this.state = {title: this.props.titleOfBook, note: '', reloadReviews: false};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
       console.log(this.state.title + "this is the line of the code")
@@ -12,7 +12,7 @@ class NoteMaker extends React.Component {
 
 
   handleChange(event) {
-  this.setState({review: event.target.value});
+  this.setState({note: event.target.value});
 }
 
     handleSubmit(event) {
@@ -21,7 +21,7 @@ class NoteMaker extends React.Component {
 
       console.log("button clicked")
         // this.setState({booktitle: event.target.value});
-        fetch('https://zeibrary.herokuapp.com/notes/' , {
+        fetch('http://localhost:8080/notes/' , {
     method: "POST",
     headers: {
       'Content-type': 'application/json'
@@ -37,6 +37,7 @@ class NoteMaker extends React.Component {
   return (
   <div className="">
   <h3> form</h3>
+  {this.state.title}
 
   <form onSubmit={this.handleSubmit}>
         <label>
@@ -48,4 +49,4 @@ class NoteMaker extends React.Component {
   )
  }
 }
-export default NoteMaker;
+export default NoteForm;
