@@ -33,8 +33,15 @@ export default class Home extends Component {
     return (
       <div className="container">
         <header className="jumbotron">
-          <h3>{this.state.content}</h3>
-        </header>
+      <h1> <span class="d-block p-2 bg-dark text-white mx-auto" style={{ display: "flex", justifyContent: "center", fontSize: 45 }}> {this.state.content} </span> </h1>
+</header>
+      <img
+					src="https://pbs.twimg.com/media/EomvmqyU8AA_TiV?format=jpg&name=small"
+          alt=""
+          />
+
+
+        
       </div>
     );
   }

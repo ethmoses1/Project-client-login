@@ -87,12 +87,14 @@ body: JSON.stringify(this.state)
        <div className="searchForm">
         <form onSubmit={this.handleSubmit} className="search-button">
           <label>
-             BookTitle:
+             <label class="font-weight-bolder">Search Available Books </label>
 
-              <input type="search" onInput={this.handleInput} required placeholder="Book name ..." />
-              <input type="submit" value="Search Book" className="search-button"/>
-           </label>
-      </form>
+
+
+             <input type="search" onInput={this.handleInput} required placeholder="Book Name ..." />
+          <input type="submit" value="Search" className="search-button p-0 bg-dark text-white "/>
+              </label>
+</form>
 
       <h1> {this.state.title} </h1>
           {this.state.authors ? this.state.authors.map((author) =>
@@ -102,7 +104,7 @@ body: JSON.stringify(this.state)
           {<img src={ this.state.cover } />}
 
         {this.state.title ?
-          <button type="button" onClick={this.submitBackEnd}>Add to shelf</button>
+          <button type="button left" onClick={this.submitBackEnd} className="p-1 bg-dark text-white">Add to shelf</button>
           :null}
       </div>
 

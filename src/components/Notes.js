@@ -91,17 +91,17 @@ makeReview(){
 
   return (
   <div className="Notes-Container">
-  <h1> Notes </h1>
+  <h1> <span class="d-block p-2 bg-dark text-white mx-auto" style={{ display: "flex", justifyContent: "center", fontSize: 45 }}> Notes </span> </h1>
   <h4>{this.props.dataFromParent}</h4>
 
   <div className="button-button-display">
-  <button onClick={this.handleBackEnd} className="button1">Reviews</button>
-  <button onClick={this.getNotesBackEnd} className="button2">Notes</button>
+  <button onClick={this.handleBackEnd} className="button1 p-2 bg-dark text-white mx-auto">Reviews</button>
+  <button onClick={this.getNotesBackEnd} className="button2 p-2 bg-dark text-white mx-auto">Notes</button>
   </div>
 
 <div className="create-review-notes">
 {this.state.button ?
-  <button onClick={this.makeReview}>Create Review</button>
+  <button onClick={this.makeReview} >Create Review</button>
 :null}
 
 

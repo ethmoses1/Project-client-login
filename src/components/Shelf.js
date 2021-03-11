@@ -79,6 +79,7 @@ const bookId = e.target.getAttribute('value')
         })
 }
 
+
 stringToColour = (str) => {
 let string = '0123456789ABCDEF'
     var hash = 0;
@@ -103,10 +104,11 @@ let string = '0123456789ABCDEF'
    const listBooks = this.state.shelfBooks.map((book) =>
 
      (
+
        <li key={book._id} className="Book">
 
        <a href={'/reviews/'+book._id} onClick={this.paramsbook.bind(this)}>{book.title}</a>
-       <button onClick={(e) => this.deleteBook(e)} className="btn-danger" value = {book._id}>Remove</button>
+       <button onClick={(e) => this.deleteBook(e)} className="deleteBook" value = {book._id}> x </button>
 
 
        </li>
@@ -117,7 +119,7 @@ let string = '0123456789ABCDEF'
    console.log(this.state.bookid)
   return (
   <div className="shelfContainer">
-    <h1> Book Shelf </h1>
+    <h1> <span class="d-block p-2 bg-dark text-white mx-auto" style={{ display: "flex", justifyContent: "center", fontSize: 45 }}> Book Shelf </span> </h1>
 
 
     <div className="bookShelf">
@@ -126,7 +128,7 @@ let string = '0123456789ABCDEF'
       </ul>
     </div>
     <Switch>
-         <Route path="/reviews/id" children={<Reviews />} />
+         <Route path="/ReviewsNotePage/id" children={<Reviews />} />
        </Switch>
   </div>
   )
