@@ -97,3 +97,8 @@ console.log('this is working', this.props.params)
  }
 }
 export default ReviewsNotesPage;
+
+// <Areview dataFromParent = {this.state.title}/>
+// <Notes dataFromParent = {this.state.title}/>
+// <button onClick={this.state.Areview}>Areview</button>
+// <button onClick={<Notes dataFromParent = {this.state.title}/>}>Notes</button>

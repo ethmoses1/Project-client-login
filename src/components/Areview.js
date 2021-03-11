@@ -53,6 +53,9 @@ console.log(this.state.reviews)
       axios(baseUrl).then((response) => {
          const info = (response.data)
          console.log(info)
+         // var arr1 = this.state.reviews
+         // var arr2 = arr1
+         //   arr1 = []
            info.map((book) => {
              console.log(book.title)
              // console.log(this.props.dataFromParent)
@@ -61,6 +64,7 @@ console.log(this.state.reviews)
                this.setState({reviewsInfo: book})
                this.setState({title: book.title})
                // this.setState({reviews: book.review})
+
                this.state.reviews.push(book.review)
                // this.setState({button: true})
              }else{
@@ -90,6 +94,7 @@ getbutton(){
   this.setState({button: true})
 }
 makeReview(){
+
     this.setState({formRenderer: true})
 }
 makeNotes(){
