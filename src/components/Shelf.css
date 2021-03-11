@@ -80,6 +80,8 @@ ul{
   /* text-orientation: upright; */
   /* box-sizing: border-box; */
   display: flex;
+  justify-content: space-around;
+  background-image: url();
   flex-wrap: wrap;
   /* border-bottom: 3px solid red; */
   /* text-orientation: sideways; */
@@ -114,5 +116,21 @@ h1{
 }
 
 a{
-  color: red;
+  color: white;
+}
+li.Book{
+  background-color: green;
+}
+li:nth-child(2n+0) {
+  background: BlueViolet;
+}
+li:nth-child(3n+0) {
+  background: FireBrick;
+}
+li:nth-child(4n+0) {
+  background: DarkBlue;
+}
+li:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }

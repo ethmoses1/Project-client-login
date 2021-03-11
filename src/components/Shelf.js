@@ -127,7 +127,7 @@ let string = '0123456789ABCDEF'
 
        <li key={book._id} className="Book">
 
-       <a href={'/reviews/'+book._id} onClick={this.paramsbook.bind(this)}>{book.title}</a>
+       <a href={'/reviews/'+book._id} onClick={this.paramsbook.bind(this)} style={{background: book.cover}}>{book.title}</a>
        <button onClick={(e) => this.deleteBook(e)} className="deleteBook" value = {book._id}> x </button>
 
 
