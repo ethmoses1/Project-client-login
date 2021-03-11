@@ -80,6 +80,9 @@ settinPage(){
   this.setState({title: this.props.dataFromParent } )
 }
 
+componentWillMount(){
+  this.handleBackEnd()
+}
 componentDidMount(){
 // this.setState({title: this.props.dataFromParent } )
 this.settinPage()
@@ -110,16 +113,16 @@ makeNotes(){
   </div>
 
 <div className="create-review-notes">
-{this.state.button ?
-  <button onClick={this.makeReview}>Create Review</button>
-:null}
 
 
-  <div>
+  <div className="display-reviews">
   {this.state.reviews.map((review) =>
-    <p key={review}> {review} </p>
+    <p key={review}><small> {review} </small></p>
   )}
   </div>
+  {this.state.button ?
+    <button onClick={this.makeReview}>Create Review</button>
+  :null}
   {this.state.formRenderer ? <ReviewForm data = {this.state.title}/> :null}
 
   </div>

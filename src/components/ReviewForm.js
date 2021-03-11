@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './ReviewForm.css'
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -29,20 +30,19 @@ class ReviewForm extends React.Component {
     body: JSON.stringify(this.state)
   })
   .then((result) => result.json())
-  .then((info) => { console.log(info); })
+  .then((info) => { console.log(info); }).then((e) => this.setState({review: ''}))
     }
 
  render() {
 
   return (
   <div className="">
-  <h3> form</h3>
 
-  <form onSubmit={this.handleSubmit}>
+  <form onSubmit={this.handleSubmit} className="form-container">
         <label>
-          <textarea value={this.state.value} onChange={this.handleChange} />
+          <textarea value={this.state.value} onChange={this.handleChange} className="textarea-form"/>
         </label>
-        <input type="submit" value="Submit" />
+        <input type="Submit" value="Submit" />
       </form>
   </div>
   )

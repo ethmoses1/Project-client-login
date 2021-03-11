@@ -14,19 +14,29 @@ export default class Profile extends Component {
     const { currentUser } = this.state;
 
     return (
-      <div className="container">
+      <div className="">
         <header className="jumbotron">
-          <h3>
-            <strong>{currentUser.username}</strong> Profile
-          </h3>
+        <img
+  					src="htt://static.thenounproject.com/png/363640-200.png"
+            alt=""
+            />
+            <div className="container-container">
+            <img
+      					src="https://static.thenounproject.com/png/363640-200.png"
+                alt=""
+                />
+             <div className="overlay">
+              <div className="text">Welcome {currentUser.username}!</div>
+             </div>
+            </div>
+
         </header>
         <p>
-          <strong>Token:</strong>{" "}
-          {currentUser.accessToken.substring(0, 20)} ...{" "}
-          {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
+          <strong>Username:</strong>{" "}
+          {currentUser.username}
         </p>
         <p>
-          <strong>Id:</strong>{" "}
+          <strong>userId:</strong>{" "}
           {currentUser.id}
         </p>
         <p>

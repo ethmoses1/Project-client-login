@@ -85,7 +85,7 @@ console.log('this is working', this.props.params)
     <p> {this.state.description}</p>
     {<img src={ this.state.cover } />}
    </div>
-    <div className="n">
+    <div className="the-two-buttons">
    <button onClick={this.Areview}>Review</button>
    <button onClick={this.Anote}>Note</button>
     {this.state.Areview ? <Areview dataFromParent = {this.state.title}/> : null}
