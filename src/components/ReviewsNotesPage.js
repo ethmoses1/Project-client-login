@@ -32,7 +32,7 @@ class ReviewsNotesPage extends React.Component {
   // )
   //
   // }
-  componentDidMount() {
+  componentWillMount() {
     const currentPath = window.location.pathname
     const result = currentPath.slice(9);
     console.log(result)

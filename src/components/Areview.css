@@ -18,6 +18,7 @@ button.button2{
 }
 
 .display-reviews{
+  display: flex;
   text-align: left;
    margin: 0 auto;
    margin-bottom: 25px;
@@ -30,4 +31,26 @@ button.button2{
    overflow: scroll;
    border-radius: 4px;
    border-bottom: 4px solid #a7a7a7;
+}
+.paragraph-review{
+  /* margin: 0; */
+  border-radius: 4px;
+    border: 1px solid #ff9800;
+    padding: 1px 6px;
+}
+.the-currentUser-div{
+  margin-right: 10px;
+
+}
+.the-currentUser-div-message{
+  border-radius: 4px;
+    border: 1px solid #ff9800;
+    padding: 1px 6px;
+    background: #546e7a;
+
+}
+small.div-message{
+  font-weight: bold;
+  background: #546e7a;
+    color: white;
 }

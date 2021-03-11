@@ -1,10 +1,13 @@
 import React from 'react';
 import axios from 'axios';
-import './ReviewForm.css'
+import './ReviewForm.css';
+import UserService from "../services/user.service";
+import AuthService from "../services/auth.service";
+
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {title: this.props.data, review: '', reloadReviews: false};
+    this.state = {currentUser: '', title: this.props.data, review: '', reloadReviews: false};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
       console.log(this.state.title + "this is the line of the code")
@@ -21,7 +24,7 @@ class ReviewForm extends React.Component {
 
       console.log("button clicked")
         // this.setState({booktitle: event.target.value});
-        fetch('https://zeibrary.herokuapp.com/reviews/' , {
+        fetch('http://localhost:8080/reviews/' , {
     method: "POST",
     headers: {
       'Content-type': 'application/json'
@@ -32,6 +35,13 @@ class ReviewForm extends React.Component {
   .then((info) => { console.log(info); }).then((e) => this.setState({review: ''}))
     }
 
+componentDidMount(){
+  const user = AuthService.getCurrentUser();
+  const theUser = user.username
+  console.log(theUser)
+  this.setState({currentUser: theUser})
+  console.log(this.state.currentUser)
+}
  render() {
 
   return (

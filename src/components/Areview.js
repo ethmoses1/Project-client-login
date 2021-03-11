@@ -4,16 +4,18 @@ import { BrowserRouter as Router, Switch, Route, Link, useLocation } from "react
 import ReviewForm from './ReviewForm'
 // import Notes from './Notes'
 import './Areview.css'
-
+import UserService from "../services/user.service";
+import AuthService from "../services/auth.service";
 
 class Areview extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {title: '', reviewsInfo: [''], reviews: [] , button: false ,formRenderer: false, noteMakerRenderer: false};
+    this.state = {currentUser: [], title: '', reviewsInfo: [''], reviews: [] , button: false ,formRenderer: false, noteMakerRenderer: false};
     this.handleBackEnd = this.handleBackEnd.bind(this)
     this.makeReview = this.makeReview.bind(this)
     this.settinPage = this.settinPage.bind(this)
     this.getbutton = this.getbutton.bind(this)
+    this.componentDidMount = this.componentDidMount.bind(this)
 console.log(this.state.reviews)
   }
 
@@ -22,19 +24,21 @@ console.log(this.state.reviews)
     console.log("button clicked reviews")
     const url = '6041f5e00914901cdc48b5c7'
       // this.setState({booktitle: event.target.value});
-      const baseUrl = `https://zeibrary.herokuapp.com/reviews/`
+      const baseUrl = `http://localhost:8080/reviews/`
       axios(baseUrl).then((response) => {
          const info = (response.data)
          console.log(info)
          this.setState({reviews: []})
+         this.setState({currentUser: []})
            info.map((book) => {
              console.log(book.title)
              console.log(this.props.dataFromParent)
              if (book.title === this.props.dataFromParent){
-               console.log(book.review)
+               console.log(book.currentUser)
                this.setState({reviewsInfo: book})
                this.setState({title: book.title})
                // this.setState({reviews: book.review})
+               this.state.currentUser.push(book.currentUser)
                this.state.reviews.push(book.review)
                this.setState({button: true})
              }else{
@@ -66,6 +70,7 @@ console.log(this.state.reviews)
                // this.setState({reviews: book.review})
 
                this.state.reviews.push(book.review)
+               this.setState({currentUser: book.currentUser})
                // this.setState({button: true})
              }else{
                this.setState({title: this.props.dataFromParent})
@@ -82,12 +87,22 @@ settinPage(){
 
 componentWillMount(){
   this.handleBackEnd()
+  // const user = AuthService.getCurrentUser();
+  // const theUser = user.username
+  // console.log(theUser)
+  // this.setState({currentUser: theUser})
+  // console.log(this.state.currentUser)
 }
 
 componentDidMount(){
 // this.setState({title: this.props.dataFromParent } )
 this.settinPage()
 setInterval(this.handleBackEnd, 2000)
+// const user = AuthService.getCurrentUser();
+// const theUser = user.username
+// console.log(theUser)
+// this.setState({currentUser: theUser})
+// console.log(this.state.currentUser)
 }
 
 getbutton(){
@@ -116,10 +131,18 @@ makeNotes(){
 <div className="create-review-notes">
 
 <div className="display-reviews">
-{this.state.reviews.map((review) =>
- <p key={review}><small> {review} </small></p>
+<div className="the-currentUser-div">
+{this.state.currentUser.map((currentUser) =>
+ <p key={currentUser} className="the-currentUser-div-message"><small className="div-message">{currentUser} </small></p>
 
 ) }
+</div>
+<div>
+{this.state.reviews.map((review) =>
+  <p key={review} className="paragraph-review"><small> {review} </small></p>
+
+) }
+</div>
 <hr></hr>
  </div>
  {this.state.button ?
