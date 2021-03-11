@@ -72,8 +72,8 @@ class App extends Component {
 
             {currentUser && (
               <li className="nav-item">
-                <Link to={"/reviews"} className="nav-link">
-                  Review
+                <Link to={"/user"} className="nav-link">
+                  Home
                 </Link>
               </li>
             )}

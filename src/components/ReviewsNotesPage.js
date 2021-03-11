@@ -69,7 +69,7 @@ console.log('this is working', this.props.params)
 
 <div className="reviewsContainer">
    <div className="bookPage">
-    <h1> {this.state.title}</h1>
+  <h1> {this.state.title}</h1>
     By: {this.state.authors.map((author) =>
       <h3 key={author}> {author}, </h3>
     )}

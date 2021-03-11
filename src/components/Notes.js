@@ -93,42 +93,41 @@ makeNotes(){
 
  render() {
 
-  return (
-  <div className="Notes-Container">
-  <h1> <span class="d-block p-2 bg-dark text-white mx-auto" style={{ display: "flex", justifyContent: "center", fontSize: 45 }}> Notes </span> </h1>
-  <h4>{this.props.dataFromParent}</h4>
-
-  <div className="button-button-display">
-  <button onClick={this.handleBackEnd} className="button1 p-2 bg-dark text-white mx-auto">Reviews</button>
-  <button onClick={this.getNotesBackEnd} className="button2 p-2 bg-dark text-white mx-auto">Notes</button>
-  </div>
-
-<div className="create-review-notes">
-{this.state.button ?
-  <button onClick={this.makeReview} >Create Review</button>
-:null}
-
-<div>
-{this.state.notes.map((note) =>
-  <p key={note}> {note} </p>
-)}
-</div>
-{this.state.formRenderer ? <NotesForm titleOfBook = {this.state.title}/> :null}
+   return (
+   <div className="Notes-Container">
 
 
+   <div className="button-button-display">
 
-  </div>
-  </div>
-  )
+   <button onClick={this.handleBackEnd} className="button2">Notes</button>
+   </div>
+
+ <div className="create-review-notes">
+ {this.state.button ?
+   <button onClick={this.makeNotes}>Create Note</button>
+ :null}
+
+ <div>
+ {this.state.notes.map((note) =>
+   <p key={note}> {note} </p>
+ )}
+ </div>
+ {this.state.formRenderer ? <NotesForm titleOfBook = {this.state.title}/> :null}
+
+
+
+   </div>
+   </div>
+   )
+  }
  }
-}
-export default Notes;
+ export default Notes;
 
-// {this.state.formRenderer ? <ReviewForm data = {this.state.title}/> :null}
-// {this.state.noteMakerRenderer ? <ReviewForm data = {this.state.title}/> :null}
+ // {this.state.formRenderer ? <ReviewForm data = {this.state.title}/> :null}
+ // {this.state.noteMakerRenderer ? <ReviewForm data = {this.state.title}/> :null}
 
-// <div>
-// {this.state.notes.map((note) =>
-//   <p key={note}> {note} </p>
-// )}
-// </div>
+ // <div>
+ // {this.state.notes.map((note) =>
+ //   <p key={note}> {note} </p>
+ // )}
+ // </div>

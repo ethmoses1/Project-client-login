@@ -96,7 +96,7 @@ makeNotes(){
   return (
   <div className="Notes-Container">
 
-  <h4>{this.props.dataFromParent}</h4>
+  
 
   <div className="button-button-display">
   <button onClick={this.handleBackEnd} className="button1">Reviews</button>
