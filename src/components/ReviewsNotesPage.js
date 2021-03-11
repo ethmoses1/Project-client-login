@@ -38,7 +38,7 @@ class ReviewsNotesPage extends React.Component {
     console.log(result)
     this.setState({url: result})
 
-    const baseUrl = `http://localhost:8080/books/${result}`
+    const baseUrl = `https://zeibrary.herokuapp.com/books/${result}`
     axios.get(baseUrl).then((response) => {
       const info = (response.data)
       console.log(info)
@@ -96,7 +96,7 @@ console.log('this is working', this.props.params)
   </div>
    {this.state.Areview ? <Areview dataFromParent = {this.state.title}/> : null}
    {this.state.Anote ? <Notes dataFromParent = {this.state.title}/> : null}
-   
+
    <div className="image-inside-buttons">
     {
       this.state.sidecoverRight ? <img src={ this.state.cover } style={{width: 300}} /> : null
