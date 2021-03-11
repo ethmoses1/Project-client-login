@@ -2,16 +2,16 @@ import React from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route, Link, useLocation } from "react-router-dom";
 import ReviewForm from './ReviewForm'
-// import Notes from './Notes'
+import NotesForm from './NotesForm'
 // import './Areview.css'
 
 
 class Notes extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {title: '', reviewsInfo: [''], reviews: [] , button: false ,formRenderer: false, noteMakerRenderer: false};
+    this.state = {title: '', notesInfo: [''], notes: [] , button: false ,formRenderer: false, noteMakerRenderer: false};
     this.handleBackEnd = this.handleBackEnd.bind(this)
-    this.makeReview = this.makeReview.bind(this)
+    this.makeNotes = this.makeNotes.bind(this)
     this.settinPage = this.settinPage.bind(this)
     this.getbutton = this.getbutton.bind(this)
 console.log(this.state.reviews)
@@ -22,7 +22,7 @@ console.log(this.state.reviews)
     console.log("button clicked reviews")
     const url = '6041f5e00914901cdc48b5c7'
       // this.setState({booktitle: event.target.value});
-      const baseUrl = `http://localhost:8080/reviews/`
+      const baseUrl = `http://localhost:8080/notes/`
       axios(baseUrl).then((response) => {
          const info = (response.data)
          console.log(info)
@@ -30,11 +30,11 @@ console.log(this.state.reviews)
              console.log(book.title)
              console.log(this.props.dataFromParent)
              if (book.title === this.props.dataFromParent){
-               console.log(book.review)
-               this.setState({reviewsInfo: book})
+               console.log(book.note)
+               this.setState({notesInfo: book})
                this.setState({title: book.title})
                // this.setState({reviews: book.review})
-               this.state.reviews.push(book.review)
+               this.state.notes.push(book.note)
                this.setState({button: true})
              }else{
                this.setState({title: this.props.dataFromParent})
@@ -83,13 +83,13 @@ this.settinPage()
 getbutton(){
   this.setState({button: true})
 }
-makeReview(){
+makeNotes(){
     this.setState({formRenderer: true})
 }
-makeNotes(){
-  this.setState({noteMakerRenderer: true})
-  // this.setState({formRenderer: false})
-}
+// makeNotes(){
+//   this.setState({noteMakerRenderer: true})
+//   // this.setState({formRenderer: false})
+// }
 
  render() {
 
@@ -104,21 +104,30 @@ makeNotes(){
 
 <div className="create-review-notes">
 {this.state.button ?
-  <button onClick={this.makeReview}>Create Review</button>
+  <button onClick={this.makeNotes}>Create Note</button>
 :null}
 
+<div>
+{this.state.notes.map((note) =>
+  <p key={note}> {note} </p>
+)}
+</div>
+{this.state.formRenderer ? <NotesForm titleOfBook = {this.state.title}/> :null}
 
-  <div>
-  {this.state.reviews.map((review) =>
-    <p key={review}> {review} </p>
-  )}
-  </div>
 
-  // {this.state.formRenderer ? <ReviewForm data = {this.state.title}/> :null}
-  // {this.state.noteMakerRenderer ? <ReviewForm data = {this.state.title}/> :null}
+
   </div>
   </div>
   )
  }
 }
 export default Notes;
+
+// {this.state.formRenderer ? <ReviewForm data = {this.state.title}/> :null}
+// {this.state.noteMakerRenderer ? <ReviewForm data = {this.state.title}/> :null}
+
+// <div>
+// {this.state.notes.map((note) =>
+//   <p key={note}> {note} </p>
+// )}
+// </div>
