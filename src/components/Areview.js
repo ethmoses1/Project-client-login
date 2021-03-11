@@ -95,7 +95,7 @@ makeNotes(){
 
   return (
   <div className="Notes-Container">
-  
+
   <h4>{this.props.dataFromParent}</h4>
 
   <div className="button-button-display">
@@ -113,6 +113,7 @@ makeNotes(){
     <p key={review}> {review} </p>
   )}
   </div>
+  {this.state.formRenderer ? <ReviewForm data = {this.state.title}/> :null}
 
   </div>
   </div>

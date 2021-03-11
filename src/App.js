@@ -53,11 +53,7 @@ class App extends Component {
           </Link>
           <div className="navbar-nav mr-auto">
 
-          <li className="nav-item">
-            <Link to={"/home"} className="nav-link">
-              Home
-            </Link>
-          </li>
+          
             {showModeratorBoard && (
               <li className="nav-item">
                 <Link to={"/mod"} className="nav-link">
@@ -77,7 +73,7 @@ class App extends Component {
             {currentUser && (
               <li className="nav-item">
                 <Link to={"/user"} className="nav-link">
-                  User
+                  Home
                 </Link>
               </li>
             )}
@@ -86,7 +82,7 @@ class App extends Component {
           {currentUser ? (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link to={"/user"} className="nav-link">
+                <Link to={"/profile"} className="nav-link">
                   {currentUser.username}
                 </Link>
               </li>

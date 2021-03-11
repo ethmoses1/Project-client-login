@@ -3,11 +3,13 @@ import axios from 'axios';
 import './Shelf.css'
 import { BrowserRouter as Router, Switch, Route, Link, useLocation } from "react-router-dom";
 import ReviewsNotesPage from './ReviewsNotesPage.js'
+import UserService from "../services/user.service";
+import AuthService from "../services/auth.service";
 
 class Shelf extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {bookid: null , shelfBooks: []};
+    this.state = {currentUser: undefined, bookid: null , shelfBooks: [], };
       this.handleBackEnd = this.handleBackEnd.bind(this);
       this.deleteBook = this.deleteBook.bind(this);
   }
@@ -21,12 +23,26 @@ class Shelf extends React.Component {
          const info = (response.data)
          console.log(info)
 
-         // const titleResponse = info[3]["title"]
-         // const authorsResponse = info[3]["authors"]
+         // info.map((book) => {
+         //   console.log(book.currentUser)
+         //   console.log(this.props.dataFromParent)
+         //   if (book.currentUser=== this.state.currentUser){
+         //     console.log(book.title)
+         //     this.setState({shelfBooks: info})
+         //     // // this.setState({reviewsInfo: book})
+         //     // this.setState({title: book.title})
+         //     // this.setState({reviews: book.review})
+         //     // this.state.reviews.push(book.review)
+         //     // this.setState({button: true})
+         //   }else{
+         //     this.setState({title: this.props.dataFromParent})
+         //     this.setState({button: true})
+         //   }
+         // })
          //
-         // console.log(info)
-         // console.log(titleResponse)
-         // console.log(authorsResponse)
+
+
+
          this.setState({shelfBooks: info})
          // console.log(this.state.shelfBooks)
       })
@@ -39,7 +55,11 @@ class Shelf extends React.Component {
   }
 
   componentDidMount(){
+    const user = AuthService.getCurrentUser();
+    // console.log(user)
+    this.setState({currentUser: user.username})
     setInterval(this.handleBackEnd, 2000)
+
   }
 paramsbook(e){
 
@@ -126,7 +146,7 @@ let string = '0123456789ABCDEF'
       </ul>
     </div>
     <Switch>
-         <Route path="/reviews/id" children={<ReviewsNotesPage />} />
+         <Route path="/ReviewsNotesPage/id" children={<ReviewsNotesPage />} />
        </Switch>
   </div>
   )

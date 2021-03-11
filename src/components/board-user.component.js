@@ -4,13 +4,14 @@ import Shelf from './Shelf.js';
 import './User.css'
 
 import UserService from "../services/user.service";
+import AuthService from "../services/auth.service";
 
  class BoardUser extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      content: "Hello", data: 'Hello People', title: '', authors: [], cover: '', description: '', booktitle: '', reviews: {
+      currentUser: undefined , content: "Hello", data: 'Hello People', title: '', authors: [], cover: '', description: '', booktitle: '', reviews: {
       reviews: '', title: ''
     }, book: {title: 'The Lord of the Rings', author: 'J. R. R. Tolkien'}
     };
@@ -25,6 +26,9 @@ import UserService from "../services/user.service";
     }
 
   componentDidMount() {
+    const user = AuthService.getCurrentUser();
+    // console.log(user)
+    this.setState({currentUser: user.username})
     UserService.getUserBoard().then(
       response => {
         this.setState({
@@ -85,6 +89,7 @@ body: JSON.stringify(this.state)
       <div className="container">
 
        <div className="searchForm">
+
         <form onSubmit={this.handleSubmit} className="search-button">
           <label>
              BookTitle:
