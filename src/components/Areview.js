@@ -26,6 +26,7 @@ console.log(this.state.reviews)
       axios(baseUrl).then((response) => {
          const info = (response.data)
          console.log(info)
+         this.setState({reviews: []})
            info.map((book) => {
              console.log(book.title)
              console.log(this.props.dataFromParent)
@@ -75,9 +76,14 @@ settinPage(){
   this.setState({title: this.props.dataFromParent } )
 }
 
+componentWillMount(){
+  this.handleBackEnd()
+}
+
 componentDidMount(){
 // this.setState({title: this.props.dataFromParent } )
 this.settinPage()
+setInterval(this.handleBackEnd, 2000)
 }
 
 getbutton(){
@@ -96,24 +102,25 @@ makeNotes(){
   return (
   <div className="Notes-Container">
 
-  
+
 
   <div className="button-button-display">
   <button onClick={this.handleBackEnd} className="button1">Reviews</button>
   </div>
 
 <div className="create-review-notes">
-{this.state.button ?
-  <button onClick={this.makeReview}>Create Review</button>
-:null}
 
+<div className="display-reviews">
+{this.state.reviews.map((review) =>
+ <p key={review}><small> {review} </small></p>
 
-  <div>
-  {this.state.reviews.map((review) =>
-    <p key={review}> {review} </p>
-  )}
-  </div>
-  {this.state.formRenderer ? <ReviewForm data = {this.state.title}/> :null}
+)}
+ </div>
+ {this.state.button ?
+   <button onClick={this.makeReview}>Create Review</button>
+ :null}
+
+ {this.state.formRenderer ? <ReviewForm data = {this.state.title}/> :null}
 
   </div>
   </div>

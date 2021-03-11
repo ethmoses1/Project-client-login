@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import UserService from "../services/user.service";
-
+import './home.component.css'
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -33,10 +33,10 @@ export default class Home extends Component {
     return (
       <div className="container">
         <header className="jumbotron">
-      <h1> <span class="d-block p-2 bg-dark text-white mx-auto" style={{ display: "flex", justifyContent: "center", fontSize: 45 }}> Welcome to zeLibrary</span> </h1>
+      <h1> <span class="d-block p-2 bg-dark text-white mx-auto" style={{ display: "flex", justifyContent: "center", fontSize: 45 }}>{this.state.content}</span> </h1>
 </header>
       <img
-					src="https://pbs.twimg.com/media/EomvmqyU8AA_TiV?format=jpg&name=small"
+					src="https://pbs.twimg.com/media/EomvmqyU8AA_TiV?format=jpg&name=medium"
           alt=""
           />
 

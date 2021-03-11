@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
+import './NotesForm.css'
 class NoteForm extends React.Component {
   constructor(props) {
     super(props);
@@ -35,17 +35,15 @@ class NoteForm extends React.Component {
  render() {
 
   return (
-  <div className="">
-  <h3> form</h3>
-  {this.state.title}
+    <div className="">
 
-  <form onSubmit={this.handleSubmit}>
-        <label>
-          <textarea value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-  </div>
+      <form onSubmit={this.handleSubmit} className="form-container">
+            <label>
+              <textarea value={this.state.value} onChange={this.handleChange} className="textarea-form2"/>
+            </label>
+            <input type="Submit" value="Submit" />
+          </form>
+      </div>
   )
  }
 }

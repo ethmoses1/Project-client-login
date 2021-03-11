@@ -9,10 +9,12 @@ import './ReviewsNotesPage.css'
 class ReviewsNotesPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {currentURL: '', url: '', title: '', authors: [], cover: '', description: ''};
-    this.updateState = this.updateState.bind(this)
-      console.log("current url is: " + this.state.currentURL)
-  }
+    this.state = {Areview: false, Anote: false, currentURL: '', url: '', title: '', authors: [], cover: '', description: ''};
+     this.updateState = this.updateState.bind(this)
+     this.Areview = this.Areview.bind(this)
+     this.Anote = this.Anote.bind(this)
+       console.log("current url is: " + this.state.currentURL)
+   }
 
   updateState(childData){
     console.log("button clicked")
@@ -56,7 +58,14 @@ class ReviewsNotesPage extends React.Component {
 
   }
 
-
+  Areview(){
+  this.setState({Areview: true})
+  this.setState({Anote: false})
+  }
+  Anote(){
+    this.setState({Areview: false})
+  this.setState({Anote: true})
+  }
 
  render() {
 console.log('this is working', this.props.params)
@@ -76,9 +85,11 @@ console.log('this is working', this.props.params)
     <p> {this.state.description}</p>
     {<img src={ this.state.cover } />}
    </div>
-    <div className="notes-review-Page-buttons">
-      <Areview dataFromParent = {this.state.title}/>
-      <Notes dataFromParent = {this.state.title}/>
+  <div className="the-two-buttons">
+  <button onClick={this.Areview}>Review</button>
+  <button onClick={this.Anote}>Note</button>
+   {this.state.Areview ? <Areview dataFromParent = {this.state.title}/> : null}
+   {this.state.Anote ? <Notes dataFromParent = {this.state.title}/> : null}
     </div>
   </div>
   </div>

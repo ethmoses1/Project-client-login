@@ -1,16 +1,26 @@
 .reviewsContainer{
   margin: auto;
-  max-width: 85%;
+  max-width: 100%;
   display: flex;
-  justify-content: space-around;
-  border: 1px solid red;
+   justify-content: space-between;
+  /* border: 1px solid red; */
 }
 .bookPage{
-    border: 1px solid red;
-    max-width: 45%
+    border: 3px solid white;
+    background-color: white;
+    min-width: 45%;
+   max-width: 45%;
+
 }
-.notes-review-Page-buttons{
-  display: flex;
-    border: 1px solid red;
-    max-width: 50%
-}
+.the-two-buttons{
+  border: 3px solid white;
+  background-color: white;
+  min-width: 45%;
+     max-width: 45%;
+   }
+
+/* .n {
+  border: 3px solid white;
+  background-color: white;
+
+} */
