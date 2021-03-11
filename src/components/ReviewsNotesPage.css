@@ -19,6 +19,14 @@
      max-width: 45%;
    }
 
+   .image-inside-buttons{
+     margin-top: 50px;
+     text-align: center;
+   }
+   .the-two-buttons-alone{
+     text-align: center;
+   }
+   
 /* .n {
   border: 3px solid white;
   background-color: white;

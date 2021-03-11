@@ -104,14 +104,16 @@ makeNotes(){
    </div>
 
  <div className="create-review-notes">
- {this.state.button ?
-   <button onClick={this.makeNotes}>Create Note</button>
- :null}
+
 
  <div>
  {this.state.notes.map((note) =>
    <p key={note}> {note} </p>
  )}
+ 
+ {this.state.button ?
+   <button onClick={this.makeNotes}>Create Note</button>
+ :null}
  </div>
  {this.state.formRenderer ? <NotesForm titleOfBook = {this.state.title}/> :null}
 

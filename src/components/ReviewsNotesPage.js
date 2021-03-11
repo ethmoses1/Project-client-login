@@ -9,7 +9,7 @@ import './ReviewsNotesPage.css'
 class ReviewsNotesPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {Areview: false, Anote: false, currentURL: '', url: '', title: '', authors: [], cover: '', description: ''};
+     this.state = {sidecoverLeft:false, sidecoverRight: true, Areview: false, Anote: false, currentURL: '', url: '', title: '', authors: [], cover: '', description: ''};
      this.updateState = this.updateState.bind(this)
      this.Areview = this.Areview.bind(this)
      this.Anote = this.Anote.bind(this)
@@ -60,11 +60,15 @@ class ReviewsNotesPage extends React.Component {
 
   Areview(){
   this.setState({Areview: true})
+  this.setState({sidecoverRight: false})
+this.setState({sidecoverLeft: true})
   this.setState({Anote: false})
   }
   Anote(){
     this.setState({Areview: false})
-  this.setState({Anote: true})
+ this.setState({sidecoverLeft: true})
+ this.setState({sidecoverRight: false})
+this.setState({Anote: true})
   }
 
  render() {
@@ -83,13 +87,21 @@ console.log('this is working', this.props.params)
       <h3 key={author}> {author}, </h3>
     )}
     <p> {this.state.description}</p>
-    {<img src={ this.state.cover } />}
+    {this.state.sidecoverLeft ? <img src={ this.state.cover } />: null}
    </div>
   <div className="the-two-buttons">
+   <div className="the-two-buttons-alone">
   <button onClick={this.Areview}>Review</button>
   <button onClick={this.Anote}>Note</button>
+  </div>
    {this.state.Areview ? <Areview dataFromParent = {this.state.title}/> : null}
    {this.state.Anote ? <Notes dataFromParent = {this.state.title}/> : null}
+   
+   <div className="image-inside-buttons">
+    {
+      this.state.sidecoverRight ? <img src={ this.state.cover } style={{width: 300}} /> : null
+    }
+   </div>
     </div>
   </div>
   </div>

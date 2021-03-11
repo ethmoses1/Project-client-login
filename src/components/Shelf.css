@@ -29,7 +29,7 @@ max-width: 100%;
    font-family: Verdana, sans-serif;
    margin-bottom: 10px;
    margin-top: 10px;
-   border: 1px solid #6adf10;
+   border: 1px solid ;
 
 
    /* border-bottom: 7px solid #a87328; */
@@ -80,6 +80,8 @@ ul{
   /* text-orientation: upright; */
   /* box-sizing: border-box; */
   display: flex;
+  justify-content: space-around;
+ background-image: url();
   flex-wrap: wrap;
   /* border-bottom: 3px solid red; */
   /* text-orientation: sideways; */
@@ -115,4 +117,21 @@ h1{
 
 .Text{
   color: white;
+}
+
+li.Book{
+  background-color: green;
+}
+li:nth-child(2n+0) {
+  background: BlueViolet;
+}
+li:nth-child(3n+0) {
+  background: FireBrick;
+}
+li:nth-child(4n+0) {
+  background: DarkBlue;
+}
+li:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }

@@ -37,13 +37,13 @@ class NoteForm extends React.Component {
   return (
     <div className="">
 
-      <form onSubmit={this.handleSubmit} className="form-container">
-            <label>
-              <textarea value={this.state.value} onChange={this.handleChange} className="textarea-form2"/>
-            </label>
-            <input type="Submit" value="Submit" />
-          </form>
-      </div>
+    <form onSubmit={this.handleSubmit} className="form-container">
+          <label>
+            <textarea value={this.state.value} onChange={this.handleChange} className="textarea-form2"/>
+          </label>
+          <input type="Submit" value="Submit" />
+        </form>
+    </div>
   )
  }
 }
