@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import './NotesForm.css'
+import './NotesForm.css';
+
 class NoteForm extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +17,7 @@ class NoteForm extends React.Component {
 }
 
     handleSubmit(event) {
-      alert('An essay was submitted: ' + this.state.review);
+      alert('An essay was submitted: ' + this.state.note);
       event.preventDefault();
 
       console.log("button clicked")

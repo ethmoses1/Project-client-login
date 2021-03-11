@@ -38,7 +38,7 @@ export default class Home extends Component {
       <img
 					src="https://pbs.twimg.com/media/EomvmqyU8AA_TiV?format=jpg&name=medium"
           alt=""
-          />
+          className="home-image"/>
 
 
 

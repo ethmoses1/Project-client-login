@@ -49,6 +49,10 @@ import AuthService from "../services/auth.service";
 
   }
   submitBackEnd() {
+    this.setState({title: ''})
+    this.setState({authors: []})
+    this.setState({cover: ''})
+    this.setState({description: ''})
   console.log("button clicked")
     // this.setState({booktitle: event.target.value});
     fetch('http://localhost:8080/books/' , {
@@ -100,14 +104,15 @@ body: JSON.stringify(this.state)
           <input type="submit" value="Search" className="search-button p-0 bg-dark text-white "/>
               </label>
 </form>
-
+     <div className="search-result-section">
       <h1> {this.state.title} </h1>
+
           {this.state.authors ? this.state.authors.map((author) =>
             <h3 key={author}> {author} </h3>
           ) : this.state.data}
-            <p> {this.state.description}</p>
+          <div className="display-response"> <p><small> {this.state.description}</small></p></div>
           {<img src={ this.state.cover } />}
-
+    </div>
         {this.state.title ?
           <button type="button left" onClick={this.submitBackEnd} className="p-1 bg-dark text-white">Add to shelf</button>
           :null}

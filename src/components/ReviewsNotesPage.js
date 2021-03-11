@@ -82,11 +82,20 @@ console.log('this is working', this.props.params)
 
 <div className="reviewsContainer">
    <div className="bookPage">
-  <h1> {this.state.title}</h1>
-    By: {this.state.authors.map((author) =>
-      <h3 key={author}> {author}, </h3>
+   <div className="top-horizontal">
+  <h2> {this.state.title}</h2>
+  </div>
+  <hr></hr>
+  <div className="middle-horizontal">
+    By:
+    </div>
+  <hr></hr>
+  <div className="bottom-horizontal">
+    {this.state.authors.map((author) =>
+      <h5 key={author}> {author}, </h5>
     )}
-    <p> {this.state.description}</p>
+    </div>
+    <p><small> {this.state.description}</small></p>
     {this.state.sidecoverLeft ? <img src={ this.state.cover } />: null}
    </div>
     <div className="the-two-buttons">

@@ -119,7 +119,8 @@ makeNotes(){
 {this.state.reviews.map((review) =>
  <p key={review}><small> {review} </small></p>
 
-)}
+) }
+<hr></hr>
  </div>
  {this.state.button ?
    <button onClick={this.makeReview}>Create Review</button>
