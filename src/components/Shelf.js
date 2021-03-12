@@ -87,7 +87,7 @@ const bookId = e.target.getAttribute('value')
   const baseUrl = ``
   window.confirm(
       "Are you sure you wish to delete this book from your Shelf?"
-    ) && axios.delete(`http://localhost:8080/books/${bookId}`)
+    ) && axios.delete(`https://zeibrary.herokuapp.com/books/${bookId}`)
         .then(res => {
           console.log(res);
           console.log(res.data);

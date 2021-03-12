@@ -24,7 +24,7 @@ class ReviewForm extends React.Component {
 
       console.log("button clicked")
         // this.setState({booktitle: event.target.value});
-        fetch('http://localhost:8080/reviews/' , {
+        fetch('https://zeibrary.herokuapp.com/reviews/' , {
     method: "POST",
     headers: {
       'Content-type': 'application/json'
