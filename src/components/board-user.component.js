@@ -2,7 +2,6 @@ import React from "react";
 import axios from 'axios';
 import Shelf from './Shelf.js';
 import './User.css'
-import SearchIcon from '@material-ui/icons/Search';
 
 import UserService from "../services/user.service";
 import AuthService from "../services/auth.service";
@@ -27,7 +26,7 @@ import AuthService from "../services/auth.service";
     }
 
   componentWillMount() {
-    
+
     const user = AuthService.getCurrentUser();
     // console.log(user)
     this.setState({currentUser: user.username})
@@ -98,16 +97,16 @@ body: JSON.stringify(this.state)
 
         <form onSubmit={this.handleSubmit} className="search-button">
           <label>
-             <label class="font-weight-bolder">Search Available Books </label>
+             <label className="font-weight-bolder">Search Available Books </label>
 
         <div className="searching-searching">
             <div className="searching">
-             <SearchIcon/><input type="search" onInput={this.handleInput} required placeholder="Book Name ..." />
+             <input type="search" onInput={this.handleInput} required placeholder="Book Name ..." />
              </div>
           <input type="submit" value="Search" className="search-button p-0 bg-dark text-white "/>
           </div>
               </label>
-</form>
+    </form>
 
      <div className="search-result-section">
       <h1> {this.state.title} </h1>

@@ -87,22 +87,12 @@ settinPage(){
 
 componentWillMount(){
   this.handleBackEnd()
-  // const user = AuthService.getCurrentUser();
-  // const theUser = user.username
-  // console.log(theUser)
-  // this.setState({currentUser: theUser})
-  // console.log(this.state.currentUser)
 }
 
 componentDidMount(){
 // this.setState({title: this.props.dataFromParent } )
 this.settinPage()
 setInterval(this.handleBackEnd, 2000)
-// const user = AuthService.getCurrentUser();
-// const theUser = user.username
-// console.log(theUser)
-// this.setState({currentUser: theUser})
-// console.log(this.state.currentUser)
 }
 
 getbutton(){
@@ -161,3 +151,9 @@ export default Areview;
 
 // {this.state.formRenderer ? <ReviewForm data = {this.state.title}/> :null}
 // {this.state.noteMakerRenderer ? <ReviewForm data = {this.state.title}/> :null}
+
+// const user = AuthService.getCurrentUser();
+// const theUser = user.username
+// console.log(theUser)
+// this.setState({currentUser: theUser})
+// console.log(this.state.currentUser)

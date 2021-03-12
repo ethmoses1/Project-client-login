@@ -2,90 +2,43 @@
    height: 100%;
 }
 .shelfContainer{
-  /* padding-left: 4px;
-  padding-right: 4px; */
-  /* border: 1px solid blue; */
-  /* margin-top:200px; */
 max-width: 100%;
-
-  /* background-image: linear-gradient(
-    #241909,
-    #2c1e0b 220px,
-    #b87e2c 220px,
-    #b87e2c 222px,
-    #a87328 222px,
-    #a87328 228px,
-    #986824 228px,
-    #986824 230px
-  ); */
-  /* background-size: 10px 230px; */
 }
 .Book{
   height: 88px;
    width: 65px;
-   /* float: left; */
    color: white;
    font-size: 0.65em;
    font-family: Verdana, sans-serif;
    margin-bottom: 10px;
    margin-top: 10px;
    border: 1px solid green;
-
-
-   /* border-bottom: 7px solid #a87328; */
-
 }
 
 
 .bookShelf{
-  /* padding-left: 4px;
-   padding-right: 4px;
-   position: absolute; */
-border-radius: 25px;
+  border-radius: 25px;
   border: 12px #a87328 solid;
-  /* width: 120%; */
-  /* height: 620px; */
-
-/* width: 100%; */
   height: 448px;
   margin: 0 auto;
   background-image: linear-gradient(
    #241909,
    #2c1e0b 98px,
-   /* #b87e2c 220px, */
-   /* #b87e2c 222px, */
-   /* #a87328 222px, */
-   /* #a87328 228px, */
-   /* #986824 228px, */
    #986824 98px
   );
-
-  background-size: 10px 106px;
-  /* box-shadow: 0px 800px 0px 200px rgb(29, 167, 221); */
+ background-size: 10px 106px;
 
 }
 li{
   border-bottom: 1px solid red;
 }
 ul{
-  /* display: flex; */
   list-style-type: none;
   padding-inline-start: 0;
-  /* writing-mode: vertical-lr; */
-
-  /* transform: rotate(180deg); */
-  /*margin-top: -200px;
-  margin-left: -149px;
-  justify-content: flex-end; */
-  /* text-orientation: upright; */
-  /* box-sizing: border-box; */
   display: flex;
   justify-content: space-around;
- background-image: url();
-  flex-wrap: wrap;
-  /* border-bottom: 3px solid red; */
-  /* text-orientation: sideways; */
-
+  background-image: url();
+ flex-wrap: wrap;
 }
 
 h1{
@@ -97,7 +50,6 @@ h1{
 .deleteBook {
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-  /* border-radius: 25px; */
   padding: -40px;
   height:15px;
 
